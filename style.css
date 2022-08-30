@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
 *{
     margin: 0%;
     padding: 0%;
@@ -48,6 +49,13 @@ input{
     font-size: 15px;
     margin-top: 20px;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
 select{
     padding: 5px;
     margin: 20px 0px;
@@ -59,8 +67,9 @@ select{
     font-size: 17px;    
 }
 button#calculate{
+    
     padding: 10px;
-    margin: 20px 0px;
+    margin: 20px 15px;
     border-radius: 18px;
     background: none;
     text-align: center;
@@ -76,10 +85,11 @@ button#calculate{
 button#calculate:hover{
     background: linear-gradient(to left ,rgb(245, 151, 36),rgb(17, 241, 241));
     width: 90px;
+    
 }
 button#clear{
     padding: 10px;
-    margin: 20px 0px;
+    margin: 20px 15px;
     border-radius: 18px;
     background: none;
     text-align: center;
@@ -105,4 +115,10 @@ button#clear:hover{
 .tip{
    margin-top: 15px;
    border-bottom: 1px solid black; 
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="container"] {
+      width: 80%; 
+    }
 }

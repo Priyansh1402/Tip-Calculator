@@ -5,16 +5,21 @@ let calculate = document.querySelector("#calculate");
         let totalbill = document.querySelector("#Bill_Amount").value;
         let tippercentage = document.querySelector("#tip_percentage").value;
         let split = document.querySelector("#split").value;
+
+        let total = (totalbill * tippercentage)/split;
+        total = total.toFixed(2)
     
           if(totalbill === "" || tippercentage === 0 || split == 0){
             alert("Please Provide Value")
             return;
           }
-          
-          let total = (totalbill * tippercentage)/split;
-          total = total.toFixed(2)
-          
-         
+          if(totalbill <= 0 || split <=0){
+            alert("Please Provide Value greater then zero")
+            return;
+          }
+
+          colorchange();
+           
       document.getElementById("tip").innerHTML = total;
 
     }); 
@@ -22,6 +27,7 @@ let calculate = document.querySelector("#calculate");
     function refresh(){
         location.reload();
     };
-    function colorchange(){
-        document.getElementById("tip").style.color = "#ff0000";   
-    };
+
+    function colorchange(){ 
+      document.getElementById("tip").style.color = "#ff0000";   
+      };
